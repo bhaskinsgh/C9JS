@@ -1,0 +1,8 @@
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\bin\prjC9JSLesson14-17.dll
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\bin\prjC9JSLesson14-17.pdb
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\bin\prjC9JSLesson14-17.xml
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\obj\Debug\prjC9JSLesson14_17.Resources.resources
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\obj\Debug\prjC9JSLesson14-17.vbproj.GenerateResource.Cache
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\obj\Debug\prjC9JSLesson14-17.dll
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\obj\Debug\prjC9JSLesson14-17.xml
+C:\Development\!! Microsoft Virtual Academy !!\Javascript Fundamentals for Absolute Beginners\C9JSLesson14-17\slnC9JSLesson14-17\prjC9JSLesson14-17\obj\Debug\prjC9JSLesson14-17.pdb

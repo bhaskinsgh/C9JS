@@ -1,0 +1,18 @@
+﻿
+/*
+ *  C9JSLesson15.css
+ *
+ *  Created:  2015-01-19  BGH
+ *
+ */
+
+
+.highlight {
+    background-color:  Yellow;
+}
+
+.important {
+    font-family: report1942;
+    font-size: 1.5em;
+    font-weight: bold;
+}

@@ -1,0 +1,63 @@
+﻿
+/*
+ *  This css file contains my header styling and heading spacing
+ *  for the MVA/Channel 9 JavaScript Fundamentals series. 
+ */
+ 
+ 
+        /* 
+         *  I removed {border: solid white 3px;}   Since
+         *  a border attribute description is not necessary
+         *  in order to be able to specify border radii.
+         */
+        .LessonDescription  
+        {
+            font-family: gooddogregular, Arial, Sans-Serif;
+            
+            margin-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            color:black;
+            background-color:white;
+        }
+                 
+        header h1 {
+            margin-top:1em;
+            margin-left:10px;
+        }
+        header h2 {
+            margin-top:1.5em;
+            margin-left:10px;
+        }
+        header p 
+        {
+            font-size:1.2em;
+        }
+        header 
+        {
+          padding-right: 10px;
+          padding-left: 10px;
+          background:black;
+          color:white;
+          width:95%;
+          margin-top:20px;
+          margin-left:auto;
+          margin-right:auto;
+          overflow:hidden;
+        }
+        section 
+        {
+          padding:10px;
+          width:95%;
+          margin-left:auto;
+          margin-right:auto;
+        }        
+        #FirstElemAfterHeader {
+            margin-top:2.5em;
+        }
+        section h1 {
+            text-decoration:underline;
+            margin-top:2em;
+        }

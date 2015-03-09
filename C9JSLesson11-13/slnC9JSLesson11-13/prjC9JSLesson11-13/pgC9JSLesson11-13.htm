@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lesson 11-13 | External JavaScript, Object Literals, 
+           and the Document Object Model (DOM)</title>
+
+
+    <!-- External css -->
+
+    <!-- Relative paths, to CSS files from html, don't seem to work in VSD.
+
+         Yet, relative paths within the CSS files (i.e. to font files
+         in a subfolder) work with . or / or ./ or ~/ or ../ or ../../../../
+         That is, the resource files are found if the actual resource directory
+         is ANY descendant of the specified resource directory, even though that
+         path would clearly be incorrect --> 
+
+    <link href="FontFamilyDefinitions.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="MyHeaderStylingAndHeadingSpacing.css" rel="stylesheet" type="text/css"
+          media="all" />
+
+
+    <!-- On Page css -->
+    <style type="text/css">
+         header p {
+             font-size:1.5em;
+             } 
+    </style>
+
+
+    <!-- OnPage JavaScript -->
+
+    <script type="text/javascript" src="C9JSLesson11.js"></script>
+    <script type="text/javascript" src="AstronomyLib.js"></script>
+
+    <script type="text/javascript" src="C9JSLesson12.js"></script>
+
+    <script type="text/javascript">
+        //
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // !!!! Note that the three script tags above are valid.                !!!!
+        // !!!! BUT, specifying the src for an external JavaScript file,        !!!!
+        // !!!! will cause ANY javascript within THAT script tag to be ignored. !!!!
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //
+
+        function MyOnLoad() {
+            //
+            //  For development purposes only, resize the
+            //  browser window to 50% of the screen and
+            //  dock left, so I continue to view the MVA
+            //  video at 50% docked right while debugging
+            //  the current lesson. 
+            //
+
+            // I.e. Dock left, THEN resize to 50% ?
+
+            // window.resizeTo(...)
+        }
+
+
+        ////////////////////// Lesson 11 |  External JavaScript //////////////////////
+
+        //
+        // ONPAGE (within the script tags) JavaScript
+        //
+        alert("Hello World, from ONPAGE Javascript." +
+             "\n\nThis code exists on C9JSLesson11-13.html between a" +
+             "\nset of \<script type=\"text/javascript\"\>\</script\> tags.");
+
+
+
+
+
+        ////// Lesson 12 | Organizing and simplifying code with Object Literals //////
+
+
+
+        /////////////////// Lesson 13 |  The Document Object Model ///////////////////
+
+
+
+
+    </script>
+   
+</head>
+
+<!--
+  -- INLINE JavaScript
+-->
+<body onload=
+     'alert("Hello World, from INLINE JavaScript" +
+          "\n\nThis code placed in the <body onload=\"\"> tag." +
+          "\nIt displays an alert box when the body onload event fires.");
+      window.location.hash = "#FirstElemAfterHeader";
+      OnloadEventHandler();'>
+
+    <!-- Inline css -->
+    <header style="border-top-left-radius: 25px;
+                   border-bottom-right-radius:25px;">
+
+        <h2>MVA JavaScript Fundamentals:<br />
+            Development for Absolute Beginners</h2>
+
+        <h1>Lesson 11-13 | External JavaScript, Object Literals, 
+            and the Document Object Model (DOM)</h1>
+
+        <div class="LessonDescription">
+             <section>
+                 <p>
+                     <b>Lesson 11 | External JavaScript</b><br>
+                     Up to now, we've been mixing our JavaScript with our 
+                     HTML5 code. However, to write better organized and more 
+                     accessible applications, we must learn a new technique - 
+                     how (and why) to reference external JavaScript files.
+
+                 </p>
+                 <p>
+                     <b>Lesson 12 | Object Literals</b><br>
+                     Developers coming from Object-Oriented Programming 
+                     backgrounds may notice similar constructs, but, in 
+                     JavaScript, these ideas are implemented much differently. 
+                     This video demonstrates the creation of simple objects, 
+                     called "object literals," to keep related properties 
+                     and functions (methods) together in one structure.
+
+                 </p>
+                 <p>
+                     <b>Lesson 13 | The Document Object Model (DOM)</b><br>
+                     In this video, we discuss the Document Object Model (DOM), 
+                     explaining how the web browser parses and creates the DOM 
+                     from HTML5 code, the purpose of the window and document 
+                     objects, and the built-in API functions for accessing 
+                     parts of the DOM.
+                 </p>
+             </section>
+        </div>
+    </header>
+
+
+    <section>
+
+
+        <h1 id="FirstElemAfterHeader">Lesson 11 | External JavaScript Files</h1>
+
+
+        <h1>Lesson 12 | Object Literals</h1>
+
+
+        <h1 id="h1Lesson13Title">Lesson 13 | The Document Object Model (DOM)</h1>
+
+            <div id="divLesson13Main">
+                <p id="pFirst">This is the first paragraph</p>
+                <p id="pSecond">
+	                <strong>Second paragraph</strong>    
+                </p>
+                <p id="pThird">Third paragraph</p>
+            </div>
+
+            <div id="divLesson13Form">
+
+                <script type="text/javascript">
+                    //
+                    //  Note that multiple script elements are allowed,
+                    //  anywhere on the html page.
+                    //
+                    //  These script elements can contain both
+                    //  "immediate" code and function defintions, etc.
+                    //
+                    alert("Inside a randomly placed script element.");
+                    //
+                    //  If this code attempts to access any given HTML element,
+                    //  then it must be MUST BE MOVED TO A POSITION in the 
+                    //  raw html AFTER that html element has been declared!!!!!!!
+                    //
+                    //  Placing the javascript code on the page, can resolve
+                    //  load-time delay issues (i.e. The DOM must be fully instantiated
+                    //  and the page fully rendered before window.onload executes)
+                    //  BUT, scattering JavaScript all over the page is
+                    //  poor practice.   So, instead, use jScript to resolve
+                    //  load-time delay issues.
+                    //
+                </script>
+
+                <input type="submit" id="btnClickMe" value="Click Me" />
+
+                <a href="http://www.bing.com" id="hidTestAnchor">Bing!</a>
+        </div>
+
+    </section>
+
+</body>
+</html>

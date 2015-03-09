@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lesson 05-06 | JavaScript Variables, Types, Operators, Expressions, 
+           and Conditional Logic</title>
+
+
+    <!-- External css -->
+
+    <!-- Relative paths, to CSS files from html, don't seem to work in VSD.
+
+         Yet, relative paths within the CSS files (i.e. to font files
+         in a subfolder) work with . or / or ./ or ~/ or ../ or ../../../../
+         That is, the resource files are found if the actual resource directory
+         is ANY descendant of the specified resource directory, even though that
+         path would clearly be incorrect --> 
+
+    <link href="FontFamilyDefinitions.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="MyHeaderStylingAndHeadingSpacing.css" rel="stylesheet" type="text/css"
+          media="all" />
+
+
+    <!-- On Page css -->
+    <style type="text/css">
+         header p {
+             font-size:1.5em;
+             } 
+    </style>
+
+
+    <!-- OnPage JavaScript -->
+    <script type="text/javascript">
+
+        function MyOnLoad() {
+            //
+            //  For development purposes only, resize the
+            //  browser window to 50% of the screen and
+            //  dock left, so I continue to view the MVA
+            //  video at 50% docked right while debugging
+            //  the current lesson. 
+            //
+
+            // I.e. Dock left, THEN resize to 50% ?
+
+            // window.resizeTo(...)
+            fucked = foobar;
+        }
+
+
+        /* 
+         *  var sValue;
+         *  sValue = "Haskins";
+         *  sValue = "Rutherford";
+         * 
+         */
+
+
+
+       // VARIABLE DECLARATIONS & SCOPE
+
+       // Declaration with initialization
+       // 
+       // var sValue = "Hello World";
+       // alert(sValue);
+
+       // Referencing a variable without first declaring it,
+       // will generate a Global variable.
+       //
+       // sLocalorGlobal = "This should be Global";
+       //
+
+       // "var" declarations create local variables.
+       //
+       // var sLocalOrGlobal = "This should be Local";
+       // alert(sLocalOrGlobal);
+       //
+
+       // ToDo::   Global to what?  This page, project, other?
+       //
+       // alert(this.sLocalOrGlobal);
+       //
+
+
+       /*
+
+        var sIntro = "Value of variable oInferred::  ";
+        var sExplain = "\n\nHas an actual JavaScript type of ";
+        var oInferred;
+        
+        oInferred = "Some string";
+        alert(sIntro + oInferred +
+              sExplain + (typeof oInferred) + ".");
+
+        // Notice automatic type conversion occurs, here...
+
+        oInferred = 3.14159;
+        alert(sIntro + oInferred + 
+              sExplain + (typeof oInferred) + ".");
+
+        oInferred = true;
+        alert(sIntro + oInferred +
+              sExplain + (typeof (oInferred)) + ".");
+
+        var oUnitialized;
+        alert("Value of variable oUnitialized::  " + oUnitialized +
+              sExplain + typeof (oUnitialized) + ".");
+
+
+        // STRING CONCATENATION
+        
+        // 
+        // The addition operator adds numbers OR concatenates strings.
+        // Note the strings below are not converted to numbers
+        // because they were inferred strings by enclosing in quotations
+        //
+        var sFirstNumber = "1";
+        var sSecondNumber = "1";
+        alert(sFirstNumber + " + " + sSecondNumber + " = "
+            + (sFirstNumber + sSecondNumber));
+
+
+        // MATHEMATIC OPERATORS
+
+        var sFirstOperand = 1;
+        var sSecondOperand = 1;
+        var sResult;
+
+        sResult = sFirstOperand + sSecondOperand;
+        sResult = sFirstOperand - sSecondOperand;
+        sResult = sFirstOperand * sSecondOperand;
+        sResult = sFirstOperand / sSecondOperand;
+        
+        sResult++;  // Increment
+        sResult--;  // Decrement
+        
+        sResult += sFirstOperand;
+        sResult -= sFirstOperand;
+        sResult *= sFirstOperand;
+        sResult /= sFirstOperand;
+
+
+        //
+        // The function of the + operator is context sensitive.
+        // I.e. 
+        //      String + String yields string concatenation.
+        //      Number + Number yields mathematical addition.
+        //
+        // But what about String + Number?...
+        //
+        var oResult = 123 + "SomeString";
+        alert("Type string + type number results in...\n\n");
+        alert(oResult);
+        //
+        //     String + Number yields number conversion plus string concatenation.
+        //
+
+
+
+        //
+        // Escape sequences in strings are simple (Just add a \)
+        //
+        var sContainingEscape = "My \"so called\" life.";
+        alert(sContainingEscape);
+
+        // Sidebar::
+        // This instructor recommends that string literals be enclosed in double quotes,
+        // while function arguments be enclosed in single quotes.
+
+        var sContainingEscape = 'I\'m pretty sure this will work';
+        alert(sContainingEscape);
+
+        var sContainingEscape = 'Line\rFeed\nSequence\r\rCan be indicated by \\r or \\n.';
+        alert(sContainingEscape);
+
+        */
+
+        
+        
+        //
+        //  CONDITIONAL LOGIC IN JAVASCRIPT
+        //
+
+        //
+        // var nSomeInt = 24;
+        // var nOtherInt = 23;
+        // var sLogicTest = "nSomeInt > 30 ? ";
+        //
+        // if (nSomeInt < 30) {
+        //     alert(sLogicTest + "True");
+        // }
+        //
+        // alert(sLogicTest + (nSomeInt > 30));
+        //
+
+        function InefficientLogicTest(oEventArgs) {
+            //
+            // var nUserData = oEventArgs.target   .GetElementById("htmInpTxtUserData").value;
+            //
+            // No evt args provided for for submit button?  Also, GetElem... is used on the
+            // document object, not an html elem (target Submit button is the the wrong elem,
+            // anyway)
+            //
+            var nUserData = parseInt(document.getElementById("htmInpTxtUserData").value, 10);
+            var sLogicTest = "nSomeInt > 30 ? ";
+
+            if ((typeof(nUserData) !== "number") || isNaN(nUserData)) {
+                sLogicTest = "Please enter a numeric value";
+            }
+            else if (nUserData < 30) {
+                sLogicTest += "false";
+            }
+            else if (nUserData > 30) {
+                sLogicTest += "true";
+            }
+            else if (nUserData === 30) {
+                sLogicTest += "false (nSomeInt === 30)";
+            }
+            else {
+                sLogicTest += "Error Occurred";
+            }
+
+            alert(sLogicTest);
+
+    }  // function InefficientLogicTest()
+
+
+    //
+    // Boolean stuff, plus Logical and Operator
+    //
+    var bTestBool = true;
+    if (bTestBool && true && (!(!bTestBool)))
+        alert("bTestBool is true");
+    else
+        alert("bTestBool is false");
+
+    //
+    // Ternary Operator
+    //
+    // {Logical Expr} ? {Truthy action} : {Falsey(i.e. false, undefined, 0 or NaN) action};
+    //
+    var bHeads = true;
+    var sCoinFlipResult = "The coin toss yields ";
+    sCoinFlipResult += (bHeads) ? "heads" : "tails";
+    alert(sCoinFlipResult);
+
+
+    // Test the following in the Internet Explorer F12 Tools, Console window...
+
+    // Should return falsey Neither of these work as advertised!!!
+    // IMHO the coding around truthy and falsey is sloppy form. 
+    var oValue = undefined ? "truthy" : "falsey";
+    oValue = 100/0 ? "truthy" : "falsey";
+
+    // typeof(undefined) will return truthy, 
+    // because typeof returns a string desribing the
+    // type and a string is considered true/truthy
+    bResult = typeof ONewUnitialized ? "truthy" : "falsey";
+
+    //  Note that the == operator will coerce data types to try to find equality
+    myresult = (3 == "3") ? "truthy" : "falsey"   // Suprisingly, truthy!
+
+    // The === operator will look for equality without data type coercion
+    myresult = (3 === "3") ? "truthy" : "falsey"   // falsey
+
+
+    // Switch/case statement  (with simulated constants)
+    var NoGunpowder = 10;
+    var WetGunpowder = 20;
+    var BadFuse = 30;
+
+    // Test some random error code
+    var nErrorCode = WetGunpowder;
+
+    switch (nErrorCode) {
+        case NoGunpowder:
+            document.write("No gunpowder...");
+            break;
+        case WetGunpowder:
+            document.write("Wet gunpowder...");
+            break;
+        case BadFuse:
+            document.write("Bad fuse...");
+            break;
+        default:
+            document.write("Fault due to unknown condition.");  
+    }
+
+
+    var dtRightNow = new Date();
+    var nCurrentHour = dtRightNow.getHours();
+    switch (true) {
+        case (nCurrentHour > 8 && nCurrentHour < 12):
+            document.write("\nMorning, sunshine.");
+            break;
+        case (nCurrentHour === 12):
+            document.write("\nLunch time!");
+            break;
+        case (nCurrentHour > 12 && nCurrentHour < 18):
+            document.write("\nFight the urge to siesta!");
+            break;
+        default:
+            document.write("\nCareful Flash, they'll think you're a workaholic!");
+    }
+
+
+    </script>
+   
+</head>
+
+
+<body>
+
+    <!-- Inline css -->
+    <header style="border-top-left-radius: 25px;
+                   border-bottom-right-radius:25px;">
+
+        <h2>MVA JavaScript Fundamentals:<br />
+            Development for Absolute Beginners</h2>
+
+        <h1>Lesson 05-06 | JavaScript Variables, Types, Operators, 
+            Expressions, and Conditional Logic</h1>
+
+        <div class="LessonDescription">
+             <section>
+                 <p>
+                     In Lesson 05, Bob provides a quick overview of the most 
+                     important topics related to basic syntax rules, how 
+                     JavaScript variables and types are different than those 
+                     in other programming languages, the purpose of
+                     "undefined," and how to use escape sequences in string
+                     literals.                 
+                 </p>
+                 <p>
+                     In lesson 06, Bob demonstrates the use of the if ... 
+                     else if statement, the ternary (or conditional) 
+                     operator, and the case ... select statements. Along 
+                     the way, we learn about the && and || operators, in 
+                     addition to the Date object in JavaScript.
+                 </p>
+             </section>
+        </div>
+    </header>
+
+
+
+    <section>
+
+        <h1>JavaScript Variables, Types, Operators, and Expressions</h1>
+
+
+
+
+
+        <h1>Conditional Logic</h1>
+
+        <label>
+            <span>
+                Enter a numeric value &lt;, &gt;, or = to 30 :
+            </span>
+            <input type="number" id="htmInpTxtUserData" required=true />
+        </label>
+        <input type="submit" value="Compare to 30" onclick="InefficientLogicTest()" />
+
+
+    </section>
+
+</body>
+</html>

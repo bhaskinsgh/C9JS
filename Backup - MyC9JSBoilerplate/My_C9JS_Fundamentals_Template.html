@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lesson XX | XXXXXXXXXXXXXXXXX</title>
+
+
+    <!-- External css -->
+    <link 
+        rel="stylesheet"
+        href="../MyC9JSBoilerplate/css/FontFamilyDefinitions.css"
+        type="text/css" 
+        media="all" />
+  
+    <link
+        rel="Stylesheet" 
+        href="../MyC9JSBoilerplate/css/MyHeaderStylingAndHeadingSpacing.css" 
+        type="text/css"
+        media="all" />
+
+
+    <!-- On Page css -->
+    <style type="text/css">
+         header p {
+             font-size:1.5em;
+             } 
+    </style>
+
+
+    <!-- OnPage JavaScript -->
+    <script type="text/javascript">
+
+        function MyOnLoad() {
+        }
+
+
+        //
+        // ReplaceTitle()
+        //
+        // Replace the value of the h1Title element with the
+        // user-supplied text from the inptxtUsersInput element.
+        //
+        function ReplaceTitle() {
+            var sUsersInput = document.getElementById('inptxtUsersInput').value;
+            var htmlh1Title = document.getElementById('h1Title');
+
+            if (sUsersInput.length == 0)
+                alert('Please enter some text in the input box.');
+            else
+                htmlh1Title.innerHTML = sUsersInput;
+
+        }  // ReplaceTitle()
+
+
+    </script>
+   
+</head>
+
+
+<!-- InLine JavaScript -->
+<body onload="alert('Hello World!')">
+
+
+    <!-- Inline css -->
+    <header style="border-top-left-radius: 25px;
+                   border-bottom-right-radius:25px;">
+
+        <h2>MVA JavaScript Fundamentals:<br />
+            Development for Absolute Beginners</h2>
+
+        <h1>Lesson XX | XXXXXXXXXXXXXXXXX</h1>
+
+        <div class="LessonDescription">
+             <p>
+                  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             </p>
+        </div>
+    </header>
+
+
+
+    <section>
+
+
+        <h1 id="h1Title">Javascript Example</h1>
+
+        <input type="text" id="inptxtUsersInput" />
+        <input type="submit" value="Click Me" onclick="ReplaceTitle()" />
+
+    </section>
+
+</body>
+</html>

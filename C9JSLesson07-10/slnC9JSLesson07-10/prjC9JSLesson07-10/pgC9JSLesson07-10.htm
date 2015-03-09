@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lesson 07-10 | JavaScript Functions, Arrays, Looping Statements, 
+            and Scope</title>
+
+
+    <!-- External css -->
+
+    <!-- Relative paths, to CSS files from html, don't seem to work in VSD.
+
+         Yet, relative paths within the CSS files (i.e. to font files
+         in a subfolder) work with . or / or ./ or ~/ or ../ or ../../../../
+         That is, the resource files are found if the actual resource directory
+         is ANY descendant of the specified resource directory, even though that
+         path would clearly be incorrect --> 
+
+    <link href="FontFamilyDefinitions.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="MyHeaderStylingAndHeadingSpacing.css" rel="stylesheet" type="text/css"
+          media="all" />
+
+
+    <!-- On Page css -->
+    <style type="text/css">
+         header p {
+             font-size:1.5em;
+             } 
+    </style>
+
+
+    <!-- OnPage JavaScript -->
+    <script type="text/javascript">
+
+        function MyOnLoad() {
+            //
+            //  For development purposes only, resize the
+            //  browser window to 50% of the screen and
+            //  dock left, so I continue to view the MVA
+            //  video at 50% docked right while debugging
+            //  the current lesson. 
+            //
+
+            // I.e. Dock left, THEN resize to 50% ?
+
+            // window.resizeTo(...)
+        }
+
+
+        //////////////////////// Lesson 07 | JavaScript Functions ////////////////////////
+
+
+        // 
+        // Example 1
+        // function HelloWorld () {
+        //     alert("Hello World!");
+        // }
+        //
+        // HelloWorld();
+        // 
+
+
+        function HelloName() {
+            var sName = document.getElementById("txtName").value;
+            alert("Hello, " + sName + "!\n\nYou rock!!");
+        }
+
+
+        function AddShit(oNumber1, oNumber2) {
+            return oNumber1 + oNumber2;
+        }
+        alert("One plus one is " + AddShit(1, 1));
+
+        //
+        // Notice when a function is defined without any parameter list,
+        // ANY NUMBER OF ARGUMENTS CAN BE PASSED INTO THAT FUNCTION AND 
+        // CAN BE RETRIEVED WITHIN THE FUNCTION, AS THE "arguments" array!!!
+        function AddMultipleArgs() {
+            var oTempSum = 0;
+            for (i = 0; i < arguments.length; i++) {
+                oTempSum += arguments[i];
+            }
+            return oTempSum;
+        }
+        alert("1+1+1+1+1.5 = " + AddMultipleArgs(1, 1, 1, 1, 1.5));
+
+
+
+        //
+        // Helpful design pattern to implement Pseudo Constants (Not in lesson)
+        // See http://stackoverflow.com/questions/130396/are-there-constants-in-javascript) for other "Javascript constant" design patterns.
+        //
+        // "use strict";
+
+        var constants = Object.freeze(
+            {
+                "ADDITION": 0,
+                "MULTIPLICATION": 1
+                // "π": 3.141592653589793 ,
+                // "e": 2.718281828459045 ,
+                // "i": Math.sqrt(-1)
+            }
+        );
+        alert("ADDITION :  " + constants.ADDITION +
+              "\nMULTIPLICATION : " + constants.MULTIPLICATION);
+
+
+        
+        //
+        // Function Literals  (dynamic function definition)
+        // For simplicity, I left out an error check for arguments list > 0.
+        //
+        var fnAddition = function() {
+             var i = 0;
+             var oSum = 0;
+             for (i = 0; i < arguments.length; i++) {
+                 oSum += arguments[i]; }
+             return oSum;
+             }
+        var fnMultiplication = function () {
+             var i = 0;
+             var oProduct = 1;
+             for (i = 0; i < arguments.length; i++) {
+                 oProduct *= arguments[i]; }
+             return oProduct;
+             }
+        alert ("+ 1 2 3 4 5 :  " + fnAddition(1, 2, 3, 4, 5) +
+             "\n* 1 2 3 4 5 :  " + fnMultiplication(1, 2, 3, 4, 5));
+
+        //
+        // Theoretically this should work , but it doesn't because the JavaScript
+        // "arguments" object IS NOT AN ARRAY.  It's actually an object that is 
+        // only simliar to an array.
+        // And, the args ARRAY, as passed to the function (i.e. fnAddition or fnMultiplication)
+        // held in the fnOperation reference, below, will be interpreted as the first
+        // and only argument in the arguments object.
+        // 
+        // function Calculate(fnOperation, args) {
+        //     fnOperation(args);
+        // }
+        // // Calculate(fnAddition...) is correct.  fnAddition is a
+        // // function reference supplied for the fnOperation parameter.
+        // alert("+ 1 2 3 4 5 :  " + Calculate(fnAddition, [1, 2, 3, 4, 5]) +
+        //      "\n* 1 2 3 4 5 :  " + Calculate(fnMultiplication, [1, 2, 3, 4, 5]));
+        //
+
+
+
+        //
+        // Anonymous functions
+        //
+
+        alert("Say Hello World...\n\n" +
+               (function () { return arguments[0] + arguments[1]; })("Hello ", "World!") +
+               (function (sFirst, sSecond) { return sFirst + sSecond; })("\n\nGoodbye ", "World!")
+             ); 
+
+
+       ///////////////////////// Lesson 08 | JavaScript Arrays //////////////////////////
+
+       //
+       // Notice again, JavaScript is loosely typed.  Variable "candidates" type 
+       // is not set to array, until an empty array, [], is assigned to it.
+       //
+       var candidates = [];
+
+       candidates[0] = "Locke";
+       candidates[1] = "Reyes";
+       candidates[2] = "Ford";
+       
+       alert("Jacob chooses " + candidates[1]);
+
+
+       //
+       // Literal array assignment
+       //
+       var candidates = ["Jarrah", "Shepherd", "Kwon"]
+       alert("Jacob chooses " + candidates[0]);
+
+
+
+       //
+       // Arrays can be of MIXED TYPE...
+       //
+       var dtFlightDate = new Date("September 22, 2004");
+       var arFlightDetails = ["Oceanic", 815, dtFlightDate];
+
+       // Notice a new looping construct outputs the mixed-type array
+       for (i in arFlightDetails) {
+           document.write("<br />" + arFlightDetails[i]);
+       }
+
+
+
+       //
+       // Associative Arrays
+       //
+       var arPassengerIDs = [];
+       arPassengerIDs["Locke"]    = 10000132743;
+       arPassengerIDs["Reyes"]    = 10000653464;
+       arPassengerIDs["Ford"]     = 10000426344;
+       arPassengerIDs["Jarrah"]   = 10000463688;
+       arPassengerIDs["Shepherd"] = 10000537478;
+       arPassengerIDs["Kwon"]     = 10000986675;
+
+       alert ("John Locke's passenger ID::\n\n " + arPassengerIDs["Locke"]);
+
+
+
+       //////////////// Lesson 09 | Looping Statements in JavaScript ///////////////
+
+
+       var arPlayList = ["Between the Bars", "Angeles", "Miss Misery", "Waltz #9"];
+       document.write("<br />");
+
+       
+       //
+       // A while loop (Pre test logical condition)
+       // is generally used when a boolean condition will be tested 
+       // BEFORE the first execution of the block of code
+       //
+       var i = 0;
+       while (i < arPlayList.length) {
+           document.write("<br />Now Playing: " + arPlayList[i]);
+           i++;
+       }
+       document.write("<br />");
+
+
+       //
+       // A do-while loop (Post test logical condition)
+       // is generally used when a boolean condition will be tested 
+       // AFTER the first execution of the block of code
+       //
+       var bTestCondition = false;
+       do {
+           document.write("<br /><br />Any code within a do-while will execute " +
+                          "at least once.<br /><br />");
+       } while (bTestCondition);
+
+
+       //
+       // for loop
+       // Generally used for iterating through a block of code a predetermined
+       // number of times (possibly in a specific direction, etc) 
+       //
+       for (var i = arPlayList.length-1; i >= 0; i--) {
+           document.write("<br />Now playing yet again: " + arPlayList[i]);
+       }
+       document.write("<br />");
+
+
+       //
+       // for ... in  loop
+       // Generally used for iterating through an array, list, or collection
+       //
+       for (var i in arPlayList) {
+           document.write("<br />Last call: " + arPlayList[i]);
+       }
+
+
+       
+       ///////// Lesson 10 |  Understanding Function Scope .vs. Global Scope /////////
+
+
+       // Use of var declares a variable of function-level scope
+       // even when declared inside of a code block
+       if (true) {
+           var sFunctionScope = "Function-Level";
+       }
+       alert("Variables declared (with var) ANYWHERE within a function, have " + 
+            sFunctionScope + " scope.  Technically, this particular example is of " +
+            "page-level scope, which CAN also be indicated by the var declaration." +
+            "\n\nNote that var-declared/page-level scope is, for the purposes " +
+            "we've seen so far, functionally equivalent to global scope." +
+            "\n\nFurther note that var-declared/function-level variables ARE SAID TO BE " +
+            "HOISTED out of any code blocks/constructs up to the top of the function " +
+            "(or html page)");
+
+       (function(sString){ 
+            var sLocal = sString;
+            alert("This string is " + sString);
+            })("function-level");
+        alert ("Outside the function, the same string is " + typeof(sLocal));
+        
+
+       // Without the var declaration, a referenced variable has global scope
+       sGlobalScope = "global";
+       (function () { 
+            alert("Inside a function, an undeclared variable is " + sGlobalScope); 
+            })();
+       alert("Outside that function, the same undeclared variable retains its " +
+            "value and is still " + sGlobalScope);
+
+
+       // Function-scoped variable TEMPORARILY OVERRIDE global (undeclared) variables
+       sGlobalUndeclared = "global, undeclared";
+       alert(sGlobalUndeclared);
+       (function () {
+           var sGlobalUndeclared =
+                 "global, undeclared - TEMPORARILY OVERRIDDEN by fn-level VAR declaration";
+           alert(sGlobalUndeclared);
+       })();
+       alert("Back to " + sGlobalUndeclared);
+
+
+
+       // Function-scoped variable TEMPORARILY OVERRIDE global (undeclared) variables
+       sGlobalUndeclared = "global, undeclared";
+       alert(sGlobalUndeclared);
+       (function () {
+           sGlobalUndeclared =
+                 "global, undeclared - OVERRIDDEN by fn-level GLOBAL/non-var assignment";
+           alert(sGlobalUndeclared);
+       })();
+       alert("Global permanently overwritten... " + sGlobalUndeclared);
+
+
+       sOneMoreGlobal = "One more global string";
+       alert("At page level, sOneMoreGlobal is " + sOneMoreGlobal);
+       alert("At the top of the document object model is the window object." +
+            "\n\nHere, the value of sOneMoreGlobal is still... " + 
+            window.sOneMoreGlobal);
+
+       var sOneMorePageLevel = "One more page-level";
+       alert("At page level, sOneMorePageLevel is " + sOneMorePageLevel);
+       alert("At the top of the object model (the window object), sOneMorePageLevel is " +
+            window.sOneMorePageLevel + "\n\nSo, page-level/var-declared is not only " +
+            "functionally equivalent to global.  It IS truly global");
+
+
+
+
+    </script>
+   
+</head>
+
+
+<body>
+
+    <!-- Inline css -->
+    <header style="border-top-left-radius: 25px;
+                   border-bottom-right-radius:25px;">
+
+        <h2>MVA JavaScript Fundamentals:<br />
+            Development for Absolute Beginners</h2>
+
+        <h1>Lesson 07-10 | JavaScript Functions, Arrays, Looping
+            Statements, and Scope</h1>
+
+        <div class="LessonDescription">
+             <section>
+                 <p>
+                     <b>Lesson 07 |  Functions</b><br>
+                     Functions are central to JavaScript, 
+                     much in the same way classes are central to Object-
+                     Oriented Programming languages, like Visual Basic 
+                     or C#. In this lesson, Bob demonstrates the basics 
+                     of creating and calling functions, passing arguments, 
+                     using the arguments object, and creating function 
+                     literals, along with anonymous functions.
+                 </p>
+                 <p>
+                     <b>Lesson 08 |  JavaScript Arrays</b><br>
+                     You can think of arrays as variables that hold other 
+                     variables. In this lesson, Bob demonstrates how to 
+                     create, initialize, and retrieve elements of arrays 
+                     using indexes. He also demonstrates how to loop through 
+                     all elements in an array (foreshadowing the topic of 
+                     the next lesson) and how to create associative arrays.
+                 </p>
+                 <p>
+                     <b>Lesson 09 |  Looping Statements in JavaScript</b><br>
+                     Looping (or rather, iteration) statements allow your 
+                     application to individually access each item in an array 
+                     or other collection of object properties. In this lesson, 
+                     we demonstrate four different looping statements, pointing 
+                     out the nuanced differences between each: the while, 
+                     do ... while, for, and for ... in.
+                 </p>
+                 <p>
+                     <b>Lesson 10 |  Understanding Function Versus Global Scope</b><br>
+                     One often misunderstood topic that leads to errors in 
+                     programs is how JavaScript treats variables. This video 
+                     explains the ramifications of variable scope at both the 
+                     functional and global levels. For developers coming from 
+                     other programming languages, it demonstrates how your 
+                     familiarity with block scope may lead you to erroneous 
+                     conclusions.
+                 </p>
+             </section>
+        </div>
+    </header>
+
+
+    <section>
+
+        <h1>Lesson 07 | Functions</h1>
+
+            <!-- Example 1::
+                 <input type="submit" value="Say Hello" onclick="HelloWorld();" />
+
+                 Example 2::
+                 <input type="text" id="txtName" />
+                 <input type="submit" value="Say Hello" onclick="HelloName();" /> -->
+
+
+        <h1>Lesson 08 | JavaScript Arrays</h1>
+
+        <h1>Lesson 09 | Looping Statements in JavaScript</h1>
+
+        <h1>Lesson 10 | Understanding Function Versus Global Scope</h1>
+
+    </section>
+
+</body>
+</html>

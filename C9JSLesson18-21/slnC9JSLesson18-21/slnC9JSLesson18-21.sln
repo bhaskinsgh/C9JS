@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "prjC9JSLesson18-21", "prjC9JSLesson18-21\prjC9JSLesson18-21.vbproj", "{F3D8148E-17AE-4195-A668-AAAE5B02381C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3D8148E-17AE-4195-A668-AAAE5B02381C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D8148E-17AE-4195-A668-AAAE5B02381C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D8148E-17AE-4195-A668-AAAE5B02381C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D8148E-17AE-4195-A668-AAAE5B02381C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

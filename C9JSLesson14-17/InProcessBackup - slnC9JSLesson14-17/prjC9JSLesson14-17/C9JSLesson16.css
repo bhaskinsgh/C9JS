@@ -1,0 +1,52 @@
+﻿
+/*
+ *  C9JSLesson16.css
+ *
+ *  Created:  2015-01-15 BGH
+ *
+ */
+
+#hiddivGame {
+	
+	width: 200px;
+	float: left;
+	border: solid gray 3px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius:  10px;
+	padding: 12px;
+}
+
+#hidimgBobHead {
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    /* border: solid black 1px; */
+}
+
+#hiddivStartOver {
+	width: 100px;
+	height: 25px;
+	text-align: center;
+	padding-top: 5px;
+	float:  left;
+	border: solid black 2px;
+	border-radius:  4px;
+	margin-left:  15px;
+}
+
+#hidspanScore {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding-left: .3em;
+}
+
+.hoverOut {
+	color: red;
+	background-color: yellow;
+}
+
+.hoverIn {
+	color: yellow;
+	background-color: red;
+}
+

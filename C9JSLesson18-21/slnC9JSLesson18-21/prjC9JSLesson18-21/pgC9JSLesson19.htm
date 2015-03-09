@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Lesson 19 | Using jQuery to Retrieve JSON via AJAX</title>
+
+
+
+    <!-- External css
+    
+         Relative paths, to CSS files from html, don't seem to work in VSD.
+
+         Yet, relative paths within the CSS files (i.e. to font files
+         in a subfolder) work with . or / or ./ or ~/ or ../ or ../../../../
+         That is, the resource files are found if the actual resource directory
+         is ANY descendant of the specified resource directory, even though that
+         path would clearly be incorrect 
+    --> 
+
+    <link href="FontFamilyDefinitions.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="MyHeaderStylingAndHeadingSpacing.css" rel="stylesheet" type="text/css"
+          media="all" />
+    <link rel="stylesheet" type="text/css" href="C9JSLesson19.css" />
+    <link rel="stylesheet" type="text/css"
+        href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/cupertino/jquery-ui.css" />
+
+
+    <!--   On Page css   -->
+    <style type="text/css">
+         header p {
+             font-size:1.5em;
+             font-family:gooddogregular;
+             } 
+    </style>
+
+
+    <!--   External JavaScript -->
+    <script type="text/javascript"
+             src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>  
+    <script type="text/javascript" src="C9JSLesson19.js"></script>
+    <script type="text/javascript"
+             src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+
+
+
+    <!--   OnPage JavaScript   -->
+    <script type="text/javascript">
+        //
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // !!!! Note that the three script tags above are valid.                !!!!
+        // !!!! BUT, specifying the src for an external JavaScript file,        !!!!
+        // !!!! will cause ANY javascript within THAT script tag to be ignored. !!!!
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //
+
+        //
+        // ONPAGE (within the script tags) JavaScript
+        //
+        // alert("Hello World, from ONPAGE Javascript." +
+        //      "\n\nThis code exists on C9JSLesson14-17.html between a" +
+        //      "\nset of \<script type=\"text/javascript\"\>\</script\> tags.");
+        //
+
+    </script>
+
+   
+</head>
+
+
+<!--   INLINE JavaScript   -->
+<body onload=
+     'window.location.hash = "#hidh1Lesson19";
+      OnLoadEventHandler();'>
+
+    <!--   Inline css   -->
+    <header style="border-top-left-radius: 25px;
+                   border-bottom-right-radius:25px;">
+
+
+        <h2>MVA JavaScript Fundamentals:<br />
+            Development for Absolute Beginners</h2>
+
+        <h1>Lesson 19 | Using jQuery to Retrieve JSON via AJAX</h1>
+
+        <div class="LessonDescription">
+             <section>
+                 <p>
+                     AJAX allows webpages and web servers to communicate without 
+                     requiring a full page refresh. JSON is a data format that 
+                     closely resembles object literals in JavaScript. Most modern 
+                     web applications utilize some form of AJAX and, in this 
+                     lesson, we demonstrate how easy it is to do so via jQuery.
+                 </p>
+             </section>
+        </div>
+    </header>
+
+
+    <section id="hidsecMain" class="FirstElemAfterHeader">
+        
+        <a href="#" id="hidaGetJSON">Get JSON Data</a>
+        
+
+    </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

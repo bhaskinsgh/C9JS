@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Lesson 14-17 | Getting Started with jQuery, jQuery Selectors,
+           Events and Plugins</title>
+
+
+
+    <!-- External css
+    
+         Relative paths, to CSS files from html, don't seem to work in VSD.
+
+         Yet, relative paths within the CSS files (i.e. to font files
+         in a subfolder) work with . or / or ./ or ~/ or ../ or ../../../../
+         That is, the resource files are found if the actual resource directory
+         is ANY descendant of the specified resource directory, even though that
+         path would clearly be incorrect 
+    --> 
+
+    <link href="FontFamilyDefinitions.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="MyHeaderStylingAndHeadingSpacing.css" rel="stylesheet" type="text/css"
+          media="all" />
+    <link rel="stylesheet" type="text/css" href="C9JSLesson14.css" />
+    <link rel="Stylesheet" type="text/css" href="C9JSLesson15.css" />
+    <link rel="Stylesheet" type="text/css" href="C9JSLesson16.css" />
+    <link rel="Stylesheet" type="text/css" href="C9JSLesson17.css" />
+    <link rel="stylesheet" type="text/css"
+        href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/cupertino/jquery-ui.css" />
+
+
+    <!--   On Page css   -->
+    <style type="text/css">
+         header p {
+             font-size:1.5em;
+             } 
+    </style>
+
+
+    <!--   External JavaScript.  Additonal js files referenced inline   -->
+    <script type="text/javascript" src="C9JSLesson14-17.js"></script>
+
+
+
+    <!--   OnPage JavaScript   -->
+    <script type="text/javascript">
+        //
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // !!!! Note that the three script tags above are valid.                !!!!
+        // !!!! BUT, specifying the src for an external JavaScript file,        !!!!
+        // !!!! will cause ANY javascript within THAT script tag to be ignored. !!!!
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //
+
+        //
+        // ONPAGE (within the script tags) JavaScript
+        //
+        // alert("Hello World, from ONPAGE Javascript." +
+        //      "\n\nThis code exists on C9JSLesson14-17.html between a" +
+        //      "\nset of \<script type=\"text/javascript\"\>\</script\> tags.");
+        //
+
+    </script>
+
+   
+</head>
+
+
+<!--   INLINE JavaScript   -->
+<body onload=
+     'window.location.hash = "#hidh1Lesson17";
+      OnLoadEventHandler();'>
+
+    <!--   Inline css   -->
+    <header style="border-top-left-radius: 25px;
+                   border-bottom-right-radius:25px;">
+
+
+        <h2>MVA JavaScript Fundamentals:<br />
+            Development for Absolute Beginners</h2>
+
+        <h1>Lesson 14-17 | Getting Started with jQuery, jQuery Selectors,
+           Events and Plugins</h1>
+
+        <div class="LessonDescription">
+             <section>
+                 <p>
+                     <b>Lesson 14 | Getting Started With jQuery</b><br/>
+                     We've said several times how jQuery helps smooth over 
+                     JavaScript's rough edges. In this lesson, Bob shows 
+                     how to include and reference the jQuery library in 
+                     your webpage and how to get a reference to the jQuery 
+                     object, demonstrating the use of the .ready method as 
+                     a means of bootstrapping the onload event.
+
+                 </p>
+                 <p>
+                     <b>Lesson 15 | jQuery Selectors</b><br/>
+                     jQuery utilizes CSS3 style selectors to access DOM 
+                     objects. This video demonstrates both simple and more 
+                     advanced uses of jQuery selectors to help you get 
+                     creative when selecting DOM elements. Additionally, 
+                     Bob discusses where to go when you want to pack more 
+                     selectors into your arsenal.
+                 </p>
+                 <p>
+                     <b>Lesson 16 | jQuery Events</b><br/>
+                     This lesson shows how to utilize jQuery Events to 
+                     create a simple game by writing and attaching anonymous 
+                     functions to events fired on a webpage.
+                 </p>
+                 <p>
+                     <b>Lesson 17 | Installing and Utilizing jQuery Plugins</b><br/>
+                     jQuery Plugins are like mini-libraries of code that provide 
+                     some extra functionality. There are thousands of jQuery 
+                     Plugins available, and most of them provide some user 
+                     interface widget to display information or retrieve input 
+                     in creative ways. In this lesson, Bob demonstrates the use 
+                     of the jQueryUI Plugins from the jQuery team.
+                 </p>
+             </section>
+        </div>
+    </header>
+
+
+    <section id="hidsecMain">
+
+
+        <!--
+          --    Channel 9 JavaScript - Lesson 14
+          -->
+        <h1 class="FirstElemAfterHeader"  id="hidh1Lesson14">
+            Lesson 14 | Getting Started With jQuery</h1>
+
+            <!--
+            <script type="text/javascript"
+                src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>  
+            <script type="text/javascript" src="C9JSLesson14.js"></script> Temporarily removed
+            -->
+            <p id="l14_pFirst">
+                <span>Now is the time for all good men to come to 
+                      the aid of their country.</span>
+            </p>
+	
+            <p id="l14_pSecond">
+                <strong>In the end these things matter most: 
+                        How well did you love? How fully did you live?</strong> 
+            </p>
+	
+            <p id="l14_pThird">
+                <a id="hidLearnVisualStudioAnchor" href="http://www.learnvisualstudio.net">
+                    Visit LearnVisualStudio.net</a>
+            </p>
+
+            <!-- <div id='hidProfilePicDiv'><img src='ProfilePicture.jpg' alt='Profile picture displayed here' /></div>  -->
+
+
+
+
+
+        <!--
+          --    Channel 9 JavaScript - Lesson 15
+          -->
+        <h1 id="hidh1Lesson15">Lesson 15 | jQuery Selectors</h1>
+
+            <!--
+            <script type="text/javascript" 
+                src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="C9JSLesson15.js"></script> Temporarily removed
+            -->
+            <p id="l15_pFirst">First paragraph</p>
+            <p id="l15_pSecond" name="l15_npSecond">Second paragraph</p>
+            <p id="l15_pThird">
+                <span class="chosen">Here are some values:</span>
+            </p>
+
+            <ul>
+                <li class="chosen">One</li>
+                <li>Two</li>
+                <li>Three</li>
+                <li>Four</li>
+                <li>Five</li>
+                <li class="chosen">Six</li>
+            </ul>
+ 
+            <p name="HahaImStillEmptyAfterjQueryCodeModifiesTextOfUnnamedElements"></p>
+
+
+
+
+
+        <!--
+          --    Channel 9 JavaScript - Lesson 16
+          -->
+        <h1 id="hidh1Lesson16">Lesson 16 | jQuery Events</h1>
+
+            <script type="text/javascript" 
+                src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="C9JSLesson16.js"></script>
+
+
+            <h2>The Click-a-Bob Game</h2>
+                <h3>Quite possibly the dumbest game ever!</h3>
+
+                    <div id="hiddivGame">
+                        <img  id="hidimgBobHead"src="bobtabor.jpg" alt="BobHead Image" />
+                        <p>SCORE: <span id="hidspanScore">0</span></p>
+                        <p id="hidpSuccess">You clicked-a-bob!</p>
+                    </div>
+
+                    <div id="hiddivStartOver">Start over</div>
+                    <div style="clear:both;"></div>
+
+
+        <!-- style="clear:both;  float:left;  display:block;
+                    position:relative;  margin-bottom:100px;">  -->
+
+        
+
+
+
+        <!--
+          --    Channel 9 JavaScript - Lesson 17
+          -->
+        <h1  id="hidh1Lesson17">
+            Lesson 17 | Installing and Utilizing jQuery Plugins</h1>
+            
+            <script type="text/javascript"
+                src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript"
+                src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="C9JSLesson17.js"></script>
+
+            <div class="demo" id="hiddivDemo">
+
+                <div id="hiddivTabs">
+	                <ul>
+		                <li><a href="#hiddivTab1">Nunc tincidunt</a></li>
+		                <li><a href="#hiddivTab2">Proin dolor</a></li>
+		                <li><a href="#hiddivTab3">Aenean lacinia</a></li>
+	                </ul>
+
+	                <div id="hiddivTab1">
+		                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, 
+                        risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. 
+                        Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. 
+                        Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. 
+                        Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. 
+                        Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam 
+                        molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut 
+                        dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique 
+                        tempus lectus.</p>
+                    </div>
+                    
+                    <div id="hiddivTab2">
+		                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus 
+                        gravida ante, ut pharetra massa metus id nunc. Duis scelerisque 
+                        molestie turpis. Sed fringilla, massa eget luctus malesuada, metus 
+                        eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet 
+                        fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. 
+                        Praesent in eros vestibulum mi adipiscing adipiscing. Morbi 
+                        facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut 
+                        posuere viverra nulla. Aliquam erat volutpat. Pellentesque 
+                        convallis. Maecenas feugiat, tellus pellentesque pretium posuere, 
+                        felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris 
+                        consectetur tortor et purus.</p>    
+                    </div>
+                    
+                    <div id="hiddivTab3">
+                        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. 
+                        Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, 
+                        eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent 
+                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos 
+                        himenaeos. Fusce sodales. Quisque eu urna vel enim commodo 
+                        pellentesque. Praesent eu risus hendrerit ligula tempus pretium. 
+                        Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+
+                        <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, 
+                        semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra 
+                        justo vitae neque. Praesent blandit adipiscing velit. Suspendisse 
+                        potenti. Donec mattis, pede vel pharetra blandit, magna ligula 
+                        faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. 
+                        Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi 
+                        lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean 
+                        vehicula velit eu tellus interdum rutrum. Maecenas commodo. 
+                        Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus 
+                        hendrerit hendrerit.</p>
+	                </div>
+
+                </div> <!-- "hiddivTabs" -->
+
+                <p id="hidpDateSelection">Date: 
+                    <input id="hidinptxtDatePicker" type="text" />
+                </p>
+
+            </div> <!-- "hiddivDemo" -->
+
+
+            <p><a href="http://www.asp.net/ajaxlibrary/CDNjQueryUI1817.ashx">
+                Check out the themes on this page!</a>
+            </p>
+
+        <!-- hidh1Lesson17 -->        
+    </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

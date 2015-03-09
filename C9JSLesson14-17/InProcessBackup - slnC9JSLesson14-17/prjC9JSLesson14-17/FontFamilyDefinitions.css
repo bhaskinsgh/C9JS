@@ -1,0 +1,85 @@
+﻿/*
+ * MVA HTML5 & CSS3 Fundamentals:
+ * Development for Absolute Beginners
+ *
+ * Lesson 18 - Embedding Video in HTML5
+ *
+ * ---------------------------------------------------------------------
+ *
+ * File:  FontFamilyDefinitions.css
+ *
+ * ---------------------------------------------------------------------
+ *
+ * NOTES:
+ *
+ * 1) !!!!!!!! A font-family name CANNOT begin with a number !!!!!!!!!!
+ *
+ * 2) !!!!!!!! If relative paths are used in a css file, those paths 
+ *             must be defined relative to the location of the css file,
+ *             NOT the location of the (parent) HTML file.
+ *
+ * 3) !!!!!!!! When defining a web font using @font-face, relative
+ *             paths (./ or ../ etc) CANNOT be enclosed in quotation marks
+ */
+
+@font-face {
+    font-family: 'report1942';
+    src: url(../webfonts/report1942/1942-webfont.eot);
+    src: url(../webfonts/report1942/1942-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../webfonts/report1942/1942-webfont.woff) format('woff'),
+         url(../webfonts/report1942/1942-webfont.ttf) format('truetype'),
+         url(../webfonts/report1942/1942-webfont.svg#1942_report1942_report) format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+
+@font-face {
+    font-family: 'gooddogregular';
+    src: url(../../../../webfonts/GoodDogRegular/GoodDog-webfont.eot);
+    src: url(../../../../webfonts/GoodDogRegular/GoodDog-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../../../../webfonts/GoodDogRegular/GoodDog-webfont.woff) format('woff'),
+         url(../../../../webfonts/GoodDogRegular/GoodDog-webfont.ttf) format('truetype'),
+         url(../../../../webfonts/GoodDogRegular/GoodDog-webfont.svg#gooddogregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'windsongregular';
+    src: url(../webfonts/Windsong/Windsong-webfont.eot);
+    src: url(../webfonts/Windsong/Windsong-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../webfonts/Windsong/Windsong-webfont.woff) format('woff'),
+         url(../webfonts/Windsong/Windsong-webfont.ttf) format('truetype'),
+         url(../webfonts/Windsong/Windsong-webfont.svg#windsongregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.Casual 
+{
+    font-family:gooddogregular, Arial, Helvettica, Sans-Serif;
+}
+
+
+.VeryCasual 
+{
+  font-family:gooddogregular, Arial, Helvettica, Sans-serif;
+  font-style:italic;
+}
+
+
+.FactionNotification
+{
+    font-family:report1942, Arial, Helvettica, Sans-Serif;
+    font-size:2.0em;
+}
+
+
+/* 
+   Btw, remember, classes can also be referenced
+   in combination with specific elements.  I.e.
+  
+    p.VeryCasual { ... }
+*/
