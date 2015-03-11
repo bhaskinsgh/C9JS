@@ -91,6 +91,7 @@
     <Content Include="C9JSLesson18.js" />
     <Content Include="C9JSLesson19.js" />
     <Content Include="C9JSLesson20.js" />
+    <Content Include="C9JSLesson20Extra.js" />
     <Content Include="extJSHelloWorld.htm" />
     <Content Include="extJSHelloWorld.js" />
     <Content Include="FontFamilyDefinitions.css" />
