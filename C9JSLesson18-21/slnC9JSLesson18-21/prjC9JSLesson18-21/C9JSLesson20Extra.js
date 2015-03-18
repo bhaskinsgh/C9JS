@@ -11,7 +11,7 @@
 //
 
 //
-//  This update made from rebased branch, tempbranch.
+//  This update made from merged branch, tempbranch.
 //
 
 
